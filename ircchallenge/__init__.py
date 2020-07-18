@@ -1,4 +1,4 @@
-from base64  import b64decode
+from base64  import b64decode, b64encode
 from hashlib import sha1
 from typing  import Optional
 
@@ -36,7 +36,7 @@ def _compute(
         )
     )
 
-    return sha1(plain).hexdigest()
+    return b64encode(sha1(plain).digest()).decode("ascii")
 
 class Challenge(object):
     def __init__(self, /,
