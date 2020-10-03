@@ -39,7 +39,7 @@ def _compute(
     return b64encode(sha1(plain).digest()).decode("ascii")
 
 class Challenge(object):
-    def __init__(self, /,
+    def __init__(self,
             key:      Optional[str] = None,
             keyfile:  Optional[str] = None,
             password: Optional[str] = None):
